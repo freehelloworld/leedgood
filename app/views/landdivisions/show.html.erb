@@ -1,0 +1,33 @@
+<%- model_class = Landdivision -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:lot) %>:</strong></dt>
+  <dd><%= @landdivision.lot %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:address) %>:</strong></dt>
+  <dd><%= @landdivision.address %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:size) %>:</strong></dt>
+  <dd><%= @landdivision.size %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:frontage) %>:</strong></dt>
+  <dd><%= @landdivision.frontage %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:price) %>:</strong></dt>
+  <dd><%= @landdivision.price %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:status) %>:</strong></dt>
+  <dd><%= @landdivision.status %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:project_id) %>:</strong></dt>
+  <dd><%= @landdivision.project_id %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              landdivisions_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_landdivision_path(@landdivision), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              landdivision_path(@landdivision),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

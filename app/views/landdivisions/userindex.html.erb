@@ -1,0 +1,35 @@
+<div class="container">
+  <%= image_tag "land.jpg" %>
+</div>
+
+<%- model_class = Landdivision -%>
+<div class="page-header">
+    <h1><%=@land.name%></h1>
+    <%= link_to "View Allotment Plan", "/download_pdf", :class => 'btn' %>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:lot) %></th>
+      <th><%= model_class.human_attribute_name(:address) %></th>
+      <th><%= model_class.human_attribute_name(:size) %></th>
+      <th><%= model_class.human_attribute_name(:frontage) %></th>
+      <th><%= model_class.human_attribute_name(:price) %></th>
+      <th><%= model_class.human_attribute_name(:status) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @landdivisions.each do |landdivision| %>
+      <tr>
+        <td><%= landdivision.lot %></td>
+        <td><%= landdivision.address %></td>
+        <td><%= landdivision.size %></td>
+        <td><%= landdivision.frontage %></td>
+        <td><%= landdivision.price %></td>
+        <td><%= landdivision.status %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

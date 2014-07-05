@@ -1,0 +1,30 @@
+// Place all the styles related to the homelands controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#packprice{
+	margin-top: 20px;
+}
+
+#packedsul{
+	list-style-type: disc;
+}
+
+#packtitle{
+	
+	margin-top:20px;
+	margin-bottom:20px;
+}
+
+#packnav{
+	font-size: 20px;
+}
+
+#packnav a:hover { 
+	background-color:#89c236; 
+}
+
+#packdetail{
+	margin-left:auto !important;
+	margin-right:auto !important;
+}

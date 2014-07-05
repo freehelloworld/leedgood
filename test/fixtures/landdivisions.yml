@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lot: 1
+  address: MyString
+  size: 9.99
+  frontage: 9.99
+  price: 9.99
+  status: MyString
+  project_id: 1
+
+two:
+  lot: 1
+  address: MyString
+  size: 9.99
+  frontage: 9.99
+  price: 9.99
+  status: MyString
+  project_id: 1

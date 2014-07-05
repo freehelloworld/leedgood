@@ -1,0 +1,45 @@
+<div class="container">
+  <%= image_tag "land.jpg" %>
+</div>
+
+<%- model_class = Homeland -%>
+<div class="page-header">
+  <h1><%= @project.name %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:lot) %></th>
+      <th><%= model_class.human_attribute_name(:address) %></th>
+      <th><%= model_class.human_attribute_name(:size) %></th>
+      <th><%= model_class.human_attribute_name(:bedroom) %></th>
+      <th><%= model_class.human_attribute_name(:bathroom) %></th>
+      <th><%= model_class.human_attribute_name(:garage) %></th>
+      <th><%= model_class.human_attribute_name(:price) %></th>
+      <th><%= model_class.human_attribute_name(:status) %></th>      
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @homelands.each do |homeland| %>
+      <tr>
+        <td><%= homeland.lot %></td>
+        <td><%= homeland.address %></td>
+        <td><%= homeland.size %></td>
+        <td><%= homeland.bedroom %></td>
+        <td><%= homeland.bathroom %></td>
+        <td><%= homeland.garage %></td>
+        <td><%= homeland.price %></td>
+        <td><%= homeland.status %></td>
+        <td>
+          <%= link_to "View detail",homeland_path(homeland), :class => 'btn btn-mini' %>
+
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_homeland_path,
+            :class => 'btn btn-primary' %>

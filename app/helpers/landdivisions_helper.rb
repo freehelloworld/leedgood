@@ -1,0 +1,2 @@
+module LanddivisionsHelper
+end

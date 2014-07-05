@@ -1,0 +1,41 @@
+<div class="container">
+  <%= image_tag "land.jpg" %>
+</div>
+
+<div class="contrainer" id="packnav">
+  <%= link_to "Home and Land Package >", homelandpack_path%> <%= link_to @homeland.name, userpakages_path(@homeland.project_id)%> >detail
+
+</div>
+<div id="packcontainer">
+  <div id="packdetail">
+    <div class="container" id="packtitle">
+      <h1><%= @homeland.name %></h1>
+    </div>
+
+    <div class="span8">
+      <%= image_tag @homeland.frontimg%>
+    </div>
+
+    <div class="container">
+      <div class="span4">
+        <%= image_tag @homeland.structimg%>
+      </div>
+      <div class = "span4">
+        <div id="packprice">
+          <hr>
+          <h4>Home & Land</h4>
+          <p>From only</p>
+          <h4><%= "$"+@homeland.price.to_s%></h4>
+          <hr>
+        </div>
+        <div id="packdes">
+          <ul id ="packedsul">
+          <% @homeland.packagedes.split("||").each do |text|%>
+            <li><%= text%></li>
+          <%end%>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="container">
+  <%= image_tag "land.jpg" %>
+</div>
+<%- model_class = Project -%>
+<div class="page-header">
+  <h1>Home Land Package</h1>
+</div>
+
+  <%@projects.each do |homeland|%>
+  <div class="container landprofile">
+    <div class="row">
+      <div class="span3" data-no-turbolink>
+        <%= link_to image_tag(homeland.url,:class => 'headimg'),userpakages_path(homeland.id)%>
+      </div>
+      <div class="span9" data-no-turbolink>
+        <h2><%= link_to homeland.name, userpakages_path(homeland.id) %></h2>
+        <p><%= homeland.description %></p>
+      </div>
+  </div>
+  </div>
+  <hr>
+  <%end%>
