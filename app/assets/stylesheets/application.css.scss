@@ -8,6 +8,19 @@
 @import "bootstrap";	
 
 
+.navbar .nav > .myactive > a,
+.navbar .nav > .myactive > a:hover,
+.navbar .nav > .myactive > a:focus {
+  	color: #89c236;
+  	text-decoration: none;
+	border-top:4px solid #89c236;
+  	background-color: #fff !important;	
+  	-webkit-box-shadow: none;
+       -moz-box-shadow: none;
+          	box-shadow: none;
+}
+
+
 .clear {
 	clear:both;
 }

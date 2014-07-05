@@ -1,5 +1,5 @@
 jQuery(document).ready(function($){
-	
+
 	/* ------------------- Client Carousel --------------------- */
 
 	$('.clients-carousel').flexslider({
