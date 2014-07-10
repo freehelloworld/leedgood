@@ -29,7 +29,7 @@
 				<!--start: Logo -->
 				<div class="logo span3">
 						
-					<a class="brand" href="#"><%= image_tag "logo.png" %></a>
+					<a class="brand" href="#"><%= image_tag "logo.jpg" %></a>
 						
 				</div>
 				<!--end: Logo -->
@@ -56,10 +56,10 @@
 			              				</ul>
 
 			              			</li>
-									<li><a href="#">Services</a></li>
+									<li class="<%= is_controller?('services') %>"><%= link_to 'Services', services_path%></li>
 									<li class="<%= is_active?(contact_path) %>"><%= link_to 'Contact', contact_path%></li>
-			              			
-									<li><a href="#">Our team</a></li>
+
+			              			<li class="<%= is_active?(aboutus_path) %>"><%= link_to 'About Us', aboutus_path%></li>
 			            		</ul>
 			          		</div>
 			        	</div>
