@@ -4,7 +4,12 @@ class HomelandsController < ApplicationController
   # GET /homelands
   # GET /homelands.json
   def index
-    @homelands = Homeland.all
+    @project = Project.find(params[:packageid])
+    if(params[:packageid])
+      @homelands = Homeland.where(project_id: params[:packageid])
+    else
+      @homelands = Homeland.all
+    end
   end
 
   # GET /homelands/1

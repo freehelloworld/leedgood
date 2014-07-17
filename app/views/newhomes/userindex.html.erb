@@ -22,18 +22,18 @@
     </tr>
   </thead>
   <tbody>
-    <% @homelands.each do |homeland| %>
+    <% @homes.each do |home| %>
       <tr>
-        <td><%= homeland.lot %></td>
-        <td><%= homeland.address %></td>
-        <td><%= homeland.size %></td>
-        <td><%= homeland.bedroom %></td>
-        <td><%= homeland.bathroom %></td>
-        <td><%= homeland.garage %></td>
-        <td><%= homeland.price %></td>
-        <td><%= homeland.status %></td>
+        <td><%= home.lot %></td>
+        <td><%= home.address %></td>
+        <td><%= home.size %></td>
+        <td><%= home.bedroom %></td>
+        <td><%= home.bathroom %></td>
+        <td><%= home.garage %></td>
+        <td><%= home.price %></td>
+        <td><%= home.status %></td>
         <td>
-          <%= link_to "View detail",homeland_path(homeland), :class => 'btn btn-mini' %>
+          <%= link_to "View detail",newhome_path(home), :class => 'btn btn-mini' %>
 
         </td>
       </tr>

@@ -1,0 +1,63 @@
+<%- model_class = Homeland -%>
+<div class="page-header">
+  <h1><%=@project.name %></h1>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Homedes</th>
+      <th>Frontimg</th>
+      <th>Structimg</th>
+      <th>Lot</th>
+      <th>Address</th>
+      <th>Size</th>
+      <th>Bedroom</th>
+      <th>Bathroom</th>
+      <th>Garage</th>
+      <th>Price</th>
+      <th>Status</th>
+      <th>Project</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @newhomes.each do |newhome| %>
+      <tr>
+        <td><%= newhome.name %></td>
+        <td><%= newhome.homedes %></td>
+        <td><%= newhome.frontimg %></td>
+        <td><%= newhome.structimg %></td>
+        <td><%= newhome.lot %></td>
+        <td><%= newhome.address %></td>
+        <td><%= newhome.size %></td>
+        <td><%= newhome.bedroom %></td>
+        <td><%= newhome.bathroom %></td>
+        <td><%= newhome.garage %></td>
+        <td><%= newhome.price %></td>
+        <td><%= newhome.status %></td>
+        <td><%= newhome.project_id %></td>
+
+        <td>
+        <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                    edit_newhome_path(newhome), :class => 'btn btn-mini' %>
+        <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                    newhome_path(newhome),
+                    :method => :delete,
+                    :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                    :class => 'btn btn-mini btn-danger' %>
+
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_newhome_path,
+            :class => 'btn btn-primary' %>
+

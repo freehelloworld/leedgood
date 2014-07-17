@@ -14,6 +14,10 @@ class ProjectsController < ApplicationController
   def homelandpack
     @projects = Project.where(projecttype_id: 2)
   end
+
+  def brandnewhome
+    @projects = Project.where(projecttype_id: 3)
+  end
   # GET /projects/1
   # GET /projects/1.json
   def show

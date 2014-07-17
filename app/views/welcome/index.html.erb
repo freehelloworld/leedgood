@@ -1,4 +1,4 @@
-<div>
+<div id="faceimg">
 	<%=image_tag "landtitle.jpg"%>	
 </div>
 
@@ -76,17 +76,17 @@
 		
 				<ul class="slides clients">
 					
-					<li><%= link_to image_tag(@project.url), @project %></li>
-										
-					<li><%= image_tag "logos2/2.jpg" %></li>	
-					<li><%= image_tag "logos2/3.jpg" %></li>
-					<li><%= image_tag "logos2/4.jpg" %></li>
-					<li><%= image_tag "logos2/5.jpg" %></li>	
-					<li><%= image_tag "logos2/6.jpg" %></li>
-					<li><%= image_tag "logos2/7.JPG" %></li>
-					<li><%= image_tag "logos2/8.jpg" %></li>
-					<li><%= image_tag "logos2/9.jpg" %></li>
-					<li><%= image_tag "logos2/10.jpg" %></li>
+					<% @projects.each do |project|%>
+						<% if project.projecttype_id==1%>
+						<li><%= link_to image_tag(project.url), userland_division_path(project.id) %></li>
+						<% end %>
+						<% if project.projecttype_id==2%>
+						<li><%= link_to image_tag(project.url), userpakages_path(project.id) %></li>
+						<% end %>
+						<% if project.projecttype_id==3%>
+						<li><%= link_to image_tag(project.url), usernewhomes_path(project.id) %></li>
+						<% end %>
+					<%end%>			
 				</ul>
 		
 			</div>

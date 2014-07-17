@@ -3,20 +3,20 @@
 </div>
 <%- model_class = Project -%>
 <div class="container">
-  <div class="page-header">
-    <h1>Home Land Package</h1>
-  </div>
+<div class="page-header">
+  <h1>Brand New Home</h1>
 </div>
-
-  <%@projects.each do |homeland|%>
+</div>
+  <%@projects.each do |home|%>
   <div class="container landprofile">
     <div class="row">
+
       <div class="span3" data-no-turbolink>
-        <%= link_to image_tag(homeland.url,:class => 'headimg'),userpakages_path(homeland.id)%>
+        <%= link_to image_tag(home.url,:class => 'headimg'),usernewhomes_path(home.id)%>
       </div>
       <div class="span9" data-no-turbolink>
-        <h2><%= link_to homeland.name, userpakages_path(homeland.id) %></h2>
-        <p><%= homeland.description %></p>
+        <h2><%= link_to home.name, usernewhomes_path(home.id) %></h2>
+        <p><%= home.description %></p>
       </div>
   </div>
   </div>

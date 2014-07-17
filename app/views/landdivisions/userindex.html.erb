@@ -3,6 +3,7 @@
 </div>
 
 <%- model_class = Landdivision -%>
+<div class="container">
 <div class="page-header">
     <h1><%=@land.name%></h1>
     <%= link_to "View Allotment Plan", "/download_pdf", :class => 'btn' %>
@@ -32,4 +33,4 @@
     <% end %>
   </tbody>
 </table>
-
+</div>

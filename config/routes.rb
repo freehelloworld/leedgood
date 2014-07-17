@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :newhomes
+
   resources :homelands
 
   resources :landdivisions
@@ -21,8 +23,12 @@ Rails.application.routes.draw do
 
 
   get '/homelandpack' => 'projects#homelandpack', as: 'homelandpack'
-
   get '/userpakages/:packageid' => 'homelands#userindex', as: 'userpakages'  
+  get '/pakages/:packageid' => 'homelands#index', as: 'pakages'
+
+  get '/brandnewhome' => 'projects#brandnewhome', as: 'brandnewhome'
+  get '/usernewhomes/:homeid' => 'newhomes#userindex', as: 'usernewhomes'
+  get '/brandnewhomes/:homeid' => 'newhomes#index', as: 'brandnewhomes'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

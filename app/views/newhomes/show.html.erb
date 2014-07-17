@@ -2,36 +2,36 @@
   <%= image_tag "land.jpg" %>
 </div>
 
-<div class="container" id="packnav">
-  <%= link_to "Home and Land Package >", homelandpack_path%> <%= link_to @homeland.name, userpakages_path(@homeland.project_id)%> >detail
+<div class="container">
+  <%= link_to "Brand New Home >", brandnewhome_path%> <%= link_to @newhome.name, usernewhomes_path(@newhome.project_id)%> >detail
 
 </div>
 
-<div class="container" id="packcontainer">
+<div class="container">
   <div id="packdetail">
-    <div class="container" id="packtitle">
-      <h1><%= @homeland.name %></h1>
+    <div class="container">
+      <h1><%= @newhome.name %></h1>
     </div>
 
     <div class="span8">
-      <%= image_tag @homeland.frontimg%>
+      <%= image_tag @newhome.frontimg%>
     </div>
 
     <div class="container">
       <div class="span4">
-        <%= image_tag @homeland.structimg%>
+        <%= image_tag @newhome.structimg%>
       </div>
       <div class = "span4">
         <div id="packprice">
           <hr>
           <h4>Home & Land</h4>
           <p>From only</p>
-          <h4><%= "$"+@homeland.price.to_s%></h4>
+          <h4><%= "$"+@newhome.price.to_s%></h4>
           <hr>
         </div>
         <div id="packdes">
           <ul id ="packedsul">
-          <% @homeland.packagedes.split("||").each do |text|%>
+            <% @newhome.homedes.split("||").each do |text|%>
             <li><%= text%></li>
           <%end%>
           </ul>

@@ -1,0 +1,90 @@
+<%= form_for @newhome, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :homedes, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :homedes, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :frontimg, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :frontimg, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :structimg, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :structimg, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :lot, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :lot, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :address, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :address, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :size, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :size, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :bedroom, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :bedroom, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :bathroom, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :bathroom, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :garage, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :garage, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :price, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :price, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :status, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :status, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :project_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :project_id, :class => 'text_field' %>
+    </div>
+  </div>
+
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                newhomes_path, :class => 'btn' %>
+  </div>
+<% end %>
+
+
+

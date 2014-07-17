@@ -1,0 +1,1 @@
+json.extract! @newhome, :id, :name, :homedes, :frontimg, :structimg, :lot, :address, :size, :bedroom, :bathroom, :garage, :price, :status, :project_id, :note1, :note2, :note3, :created_at, :updated_at

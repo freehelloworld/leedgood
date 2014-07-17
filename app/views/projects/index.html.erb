@@ -19,7 +19,17 @@
   <tbody>
     <% @projects.each do |project| %>
       <tr>
-        <td><%= link_to project.id, land_division_path(project.id) %></td>
+        <td>
+          <% if project.projecttype_id==1%>
+          <%= link_to project.id, land_division_path(project.id) %>
+          <% end %>
+          <% if project.projecttype_id==2%>
+          <%= link_to project.id, pakages_path(project.id) %>
+          <% end %>
+          <% if project.projecttype_id==3%>
+          <%= link_to project.id, brandnewhomes_path(project.id) %>
+          <% end %>
+        </td>
         <td><%= project.name %></td>
         <td><%= project.description %></td>
         <td><%= project.url %></td>
