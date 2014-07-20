@@ -1,4 +1,4 @@
-<%= form_for @newhome, :html => { :class => 'form-horizontal' } do |f| %>
+<%= form_for @newhome, :html => { :class => 'form-horizontal', :multipart => true } do |f| %>
   <div class="control-group">
     <%= f.label :name, :class => 'control-label' %>
     <div class="controls">
@@ -14,13 +14,13 @@
   <div class="control-group">
     <%= f.label :frontimg, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :frontimg, :class => 'text_field' %>
+      <%= f.file_field :frontimg, :class => 'file_field' %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :structimg, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :structimg, :class => 'text_field' %>
+      <%= f.file_field :structimg, :class => 'file_field' %>
     </div>
   </div>
   <div class="control-group">
@@ -81,8 +81,10 @@
 
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%if @newhome.project_id!=nil%>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                newhomes_path, :class => 'btn' %>
+                brandnewhomes_path(@newhome.project_id), :class => 'btn' %>
+    <%end%>
   </div>
 <% end %>
 

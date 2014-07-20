@@ -7,12 +7,13 @@
   <h1>Land</h1>
 </div>
 </div>
+<div class="container">
   <%@projects.each do |land|%>
   <div class="container landprofile">
     <div class="row">
 
       <div class="span3" data-no-turbolink>
-        <%= link_to image_tag(land.url,:class => 'headimg'),userland_division_path(land.id)%>
+        <%= link_to image_tag(land.url_url.to_s,:class => 'headimg'),userland_division_path(land.id)%>
       </div>
       <div class="span9" data-no-turbolink>
         <h2><%= link_to land.name, userland_division_path(land.id) %></h2>
@@ -22,3 +23,4 @@
   </div>
   <hr>
   <%end%>
+</div>

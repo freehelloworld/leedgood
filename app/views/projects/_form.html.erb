@@ -1,4 +1,4 @@
-<%= form_for @project, :html => { :class => 'form-horizontal' } do |f| %>
+<%= form_for @project, :html => { :class => 'form-horizontal', :multipart=>true } do |f| %>
   
   <div class="control-group">
     <%= f.label :name, :class => 'control-label' %>
@@ -19,7 +19,7 @@
   <div class="control-group">
     <%= f.label :url, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :url, :class => 'text_field' %>
+      <%= f.file_field :url, :class => 'file_field' %>
     </div>
   </div>
 
@@ -33,7 +33,7 @@
    <div class="control-group">
     <%= f.label :allotmentplan, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :allotmentplan, :class => 'text_field' %>
+      <%= f.file_field :allotmentplan, :class => 'file_field' %>
     </div>
   </div>
 

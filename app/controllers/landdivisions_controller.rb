@@ -20,6 +20,7 @@ class LanddivisionsController < ApplicationController
   # GET /landdivisions/new
   def new
     @landdivision = Landdivision.new
+    @project
   end
 
   # GET /landdivisions/1/edit
