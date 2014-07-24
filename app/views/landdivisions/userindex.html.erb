@@ -5,7 +5,7 @@
 <div class="container">
 <div class="page-header">
     <h1><%=@land.name%></h1>
-    <%= link_to "View Allotment Plan", "/download_pdf", :class => 'btn' %>
+    <%= link_to "View Allotment Plan", image_path(@land.allotmentplan_url.to_s), :class => 'btn' %>
 </div>
 <table class="table table-striped">
   <thead>
@@ -23,7 +23,7 @@
       <tr>
         <td><%= landdivision.lot %></td>
         <td><%= landdivision.address %></td>
-        <td><%= landdivision.size %></td>
+        <td><%= landdivision.size.to_f %></td>
         <td><%= landdivision.frontage %></td>
         <td><%= landdivision.price %></td>
         <td><%= landdivision.status %></td>

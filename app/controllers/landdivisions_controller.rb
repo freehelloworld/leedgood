@@ -4,11 +4,13 @@ class LanddivisionsController < ApplicationController
   # GET /landdivisions
   # GET /landdivisions.json
   def index
-    @project = Project.find(params[:landid])
+    
     if params[:landid]
+      @project = Project.find(params[:landid])
       @landdivisions = Landdivision.where(project_id: params[:landid])
     else
       @landdivisions = Landdivision.all
+      
     end
   end
 

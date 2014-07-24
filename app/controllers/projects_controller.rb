@@ -8,15 +8,15 @@ class ProjectsController < ApplicationController
   end
 
   def land
-    @projects = Project.where(projecttype_id: 1)
+    @projects = Project.where(projecttype_id: 1).order(:id).reverse_order
   end
 
   def homelandpack
-    @projects = Project.where(projecttype_id: 2)
+    @projects = Project.where(projecttype_id: 2).order(:id).reverse_order
   end
 
   def brandnewhome
-    @projects = Project.where(projecttype_id: 3)
+    @projects = Project.where(projecttype_id: 3).order(:id).reverse_order
   end
   # GET /projects/1
   # GET /projects/1.json
