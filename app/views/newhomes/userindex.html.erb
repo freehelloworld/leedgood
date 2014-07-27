@@ -26,11 +26,11 @@
       <tr>
         <td><%= home.lot %></td>
         <td><%= home.address %></td>
-        <td><%= home.size %></td>
+        <td><%= home.size.to_i %></td>
         <td><%= home.bedroom %></td>
         <td><%= home.bathroom %></td>
         <td><%= home.garage %></td>
-        <td><%= home.price %></td>
+        <td><%= home.price.to_i %></td>
         <td><%= home.status %></td>
         <td>
           <%= link_to "View detail",newhome_path(home), :class => 'btn btn-mini' %>

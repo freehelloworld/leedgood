@@ -4,9 +4,11 @@ class HomelandsController < ApplicationController
   # GET /homelands
   # GET /homelands.json
   def index
-    @project = Project.find(params[:packageid])
+    
     if(params[:packageid])
       @homelands = Homeland.where(project_id: params[:packageid])
+      session[:projectid] = params[:packageid]
+      session[:projectname] = Project.find(params[:packageid]).name
     else
       @homelands = Homeland.all
     end
@@ -20,20 +22,23 @@ class HomelandsController < ApplicationController
   # GET /homelands/new
   def new
     @homeland = Homeland.new
+    @homeland.project_id = session[:projectid]
   end
 
   # GET /homelands/1/edit
   def edit
+    @homeland.project_id = session[:projectid]
   end
 
   # POST /homelands
   # POST /homelands.json
   def create
     @homeland = Homeland.new(homeland_params)
+    @homelands = Homeland.where(project_id: session[:projectid])
 
     respond_to do |format|
       if @homeland.save
-        format.html { redirect_to @homeland, notice: 'Homeland was successfully created.' }
+        format.html { render action: "index", notice: 'Homeland was successfully created.' }
         format.json { render :show, status: :created, location: @homeland }
       else
         format.html { render :new }
@@ -47,7 +52,8 @@ class HomelandsController < ApplicationController
   def update
     respond_to do |format|
       if @homeland.update(homeland_params)
-        format.html { redirect_to @homeland, notice: 'Homeland was successfully updated.' }
+        @homelands = Homeland.where(project_id: session[:projectid])
+        format.html { render action: "index", notice: 'Homeland was successfully updated.' }
         format.json { render :show, status: :ok, location: @homeland }
       else
         format.html { render :edit }
@@ -61,7 +67,8 @@ class HomelandsController < ApplicationController
   def destroy
     @homeland.destroy
     respond_to do |format|
-      format.html { redirect_to homelands_url, notice: 'Homeland was successfully destroyed.' }
+      @homelands = Homeland.where(project_id: session[:projectid])
+      format.html { render action: "index", notice: 'Homeland was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

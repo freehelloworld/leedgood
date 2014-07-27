@@ -1,6 +1,6 @@
 <%- model_class = Landdivision -%>
 <div class="page-header">
-  <h1><%=@project.name %></h1>
+  <h1>  <%= link_to "Projects >", projects_path%><%=session[:projectname] %></h1>
 </div>
 <table class="table table-striped">
   <thead>
@@ -11,6 +11,7 @@
       <th><%= model_class.human_attribute_name(:frontage) %></th>
       <th><%= model_class.human_attribute_name(:price) %></th>
       <th><%= model_class.human_attribute_name(:status) %></th>
+      <th><%= model_class.human_attribute_name(:project_id) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -19,10 +20,11 @@
       <tr>
         <td><%= landdivision.lot %></td>
         <td><%= landdivision.address %></td>
-        <td><%= landdivision.size %></td>
+        <td><%= landdivision.size.to_i %></td>
         <td><%= landdivision.frontage %></td>
-        <td><%= landdivision.price %></td>
+        <td><%= landdivision.price.to_i %></td>
         <td><%= landdivision.status %></td>
+        <td><%= landdivision.project_id %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_landdivision_path(landdivision), :class => 'btn btn-mini' %>

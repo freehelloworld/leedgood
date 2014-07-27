@@ -1,13 +1,13 @@
 <%- model_class = Homeland -%>
 <div class="page-header">
-  <h1><%=@project.name %></h1>
+  <h1>  <%= link_to "Projects >", projects_path%><%=session[:projectname] %></h1>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:packagedes) %></th>
+      <th>Description</th>
       <th><%= model_class.human_attribute_name(:frontimg) %>(700*300)</th>
       <th><%= model_class.human_attribute_name(:structimg) %>(300*all)</th>
       <th><%= model_class.human_attribute_name(:lot) %></th>
@@ -25,18 +25,18 @@
   <tbody>
     <% @homelands.each do |homeland| %>
       <tr>
-        <td><%= link_to homeland.id, homeland_path(homeland) %></td>
+        <td><%= homeland.id %></td>
         <td><%= homeland.name %></td>
-        <td><%= homeland.packagedes %></td>
+        <td><%= truncate(homeland.packagedes, length: 50) %></td>
         <td><%= homeland.frontimg_identifier %></td>
         <td><%= homeland.structimg_identifier %></td>
         <td><%= homeland.lot %></td>
         <td><%= homeland.address %></td>
-        <td><%= homeland.size %></td>
+        <td><%= homeland.size.to_i %></td>
         <td><%= homeland.bedroom %></td>
         <td><%= homeland.bathroom %></td>
         <td><%= homeland.garage %></td>
-        <td><%= homeland.price %></td>
+        <td><%= homeland.price.to_i %></td>
         <td><%= homeland.status %></td>
         <td><%= homeland.project_id %></td>
         <td>

@@ -6,7 +6,8 @@ class LanddivisionsController < ApplicationController
   def index
     
     if params[:landid]
-      @project = Project.find(params[:landid])
+      session[:projectid] = params[:landid]
+      session[:projectname] = Project.find(params[:landid]).name
       @landdivisions = Landdivision.where(project_id: params[:landid])
     else
       @landdivisions = Landdivision.all
@@ -22,11 +23,12 @@ class LanddivisionsController < ApplicationController
   # GET /landdivisions/new
   def new
     @landdivision = Landdivision.new
-    @project
+    @landdivision.project_id = session[:projectid]
   end
 
   # GET /landdivisions/1/edit
   def edit
+    @landdivision.project_id = session[:projectid]
   end
 
   # POST /landdivisions
@@ -64,7 +66,8 @@ class LanddivisionsController < ApplicationController
   def destroy
     @landdivision.destroy
     respond_to do |format|
-      format.html { redirect_to landdivisions_url, notice: 'Landdivision was successfully destroyed.' }
+      @landdivisions = Landdivision.where(project_id: session[:projectid])
+      format.html { render action: "index", notice: 'Landdivision was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

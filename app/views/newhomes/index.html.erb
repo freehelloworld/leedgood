@@ -1,13 +1,14 @@
-<%- model_class = Homeland -%>
+<%- model_class = Newhome -%>
 <div class="page-header">
-  <h1><%=@project.name %></h1>
+  <h1>  <%= link_to "Projects >", projects_path%><%=session[:projectname] %></h1>
 </div>
 
 <table class="table table-striped">
   <thead>
     <tr>
+      <th>Id</th>
       <th>Name</th>
-      <th>Homedes</th>
+      <th>Description</th>
       <th>Frontimg(700*300)</th>
       <th>Structimg(300*all)</th>
       <th>Lot</th>
@@ -26,17 +27,18 @@
   <tbody>
     <% @newhomes.each do |newhome| %>
       <tr>
+        <td><%= newhome.id %> </td>
         <td><%= newhome.name %></td>
-        <td><%= newhome.homedes %></td>
+        <td><%= truncate(newhome.homedes, length: 50) %></td>
         <td><%= newhome.frontimg_identifier %></td>
         <td><%= newhome.structimg_identifier %></td>
         <td><%= newhome.lot %></td>
         <td><%= newhome.address %></td>
-        <td><%= newhome.size %></td>
+        <td><%= newhome.size.to_i %></td>
         <td><%= newhome.bedroom %></td>
         <td><%= newhome.bathroom %></td>
         <td><%= newhome.garage %></td>
-        <td><%= newhome.price %></td>
+        <td><%= newhome.price.to_i %></td>
         <td><%= newhome.status %></td>
         <td><%= newhome.project_id %></td>
 

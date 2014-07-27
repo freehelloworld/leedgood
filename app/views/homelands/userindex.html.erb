@@ -25,11 +25,11 @@
       <tr>
         <td><%= homeland.lot %></td>
         <td><%= homeland.address %></td>
-        <td><%= homeland.size %></td>
+        <td><%= homeland.size.to_i %></td>
         <td><%= homeland.bedroom %></td>
         <td><%= homeland.bathroom %></td>
         <td><%= homeland.garage %></td>
-        <td><%= homeland.price %></td>
+        <td><%= homeland.price.to_i %></td>
         <td><%= homeland.status %></td>
         <td>
           <%= link_to "View detail",homeland_path(homeland), :class => 'btn btn-mini' %>

@@ -4,12 +4,14 @@ class NewhomesController < ApplicationController
   # GET /newhomes
   # GET /newhomes.json
   def index
-    @project = Project.find(params[:homeid])
     if params[:homeid]
       @newhomes = Newhome.where(project_id: params[:homeid])
+      session[:projectid] = params[:homeid]
+      session[:projectname] = Project.find(params[:homeid]).name
     else
       @newhomes = Newhome.all
     end
+    
   end
 
   # GET /newhomes/1
@@ -20,20 +22,23 @@ class NewhomesController < ApplicationController
   # GET /newhomes/new
   def new
     @newhome = Newhome.new
+    @newhome.project_id = session[:projectid]
   end
 
   # GET /newhomes/1/edit
   def edit
+    @newhome.project_id = session[:projectid]
   end
 
   # POST /newhomes
   # POST /newhomes.json
   def create
     @newhome = Newhome.new(newhome_params)
+    @newhomes = Newhome.where(project_id: session[:projectid])
 
     respond_to do |format|
       if @newhome.save
-        format.html { redirect_to @newhome, notice: 'Newhome was successfully created.' }
+        format.html { render action: "index", notice: 'Newhome was successfully created.' }
         format.json { render :show, status: :created, location: @newhome }
       else
         format.html { render :new }
@@ -47,7 +52,8 @@ class NewhomesController < ApplicationController
   def update
     respond_to do |format|
       if @newhome.update(newhome_params)
-        format.html { redirect_to @newhome, notice: 'Newhome was successfully updated.' }
+        @newhomes = Newhome.where(project_id: session[:projectid])
+        format.html { render action: "index", notice: 'Newhome was successfully updated.' }
         format.json { render :show, status: :ok, location: @newhome }
       else
         format.html { render :edit }
@@ -61,7 +67,8 @@ class NewhomesController < ApplicationController
   def destroy
     @newhome.destroy
     respond_to do |format|
-      format.html { redirect_to newhomes_url, notice: 'Newhome was successfully destroyed.' }
+      @newhomes = Newhome.where(project_id: session[:projectid])
+      format.html { render action: "index", notice: 'Newhome was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
