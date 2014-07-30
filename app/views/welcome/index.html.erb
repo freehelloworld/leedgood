@@ -3,7 +3,7 @@
 	</div>
 				
 		<div class="hero-unit">
-        		<p>
+        		<p id="advnotice">
 					Your Home, Our Mission!
 				</p>
 
@@ -52,7 +52,7 @@
           				<%= link_to image_tag("design.jpg"), services_path %>
 						<div class="title"><h4>House Design and Consulting</h4></div>
 						<p>
-							Customised house design solutions to make your dream home come true.</br>
+							Customised housing design solutions to make your dream home come </br>true.</br>
 
 						</p>
 						<div class="clear"></div>
@@ -106,17 +106,17 @@
 			<div class="row">
 
 					<!-- start: Contact Info -->
-				<div class="span4">
-					<h3>Contact us</h3>
+				<div class="span6" id="contactus">
+					
+					<div id="contactusdetail">
+						<h3>Contact us</h3>
 					<p>
-						<b>Leed Goodrich Land </br>Development PTY. LTD</b>
+						<b>Leed Goodrich Land Development Pty. Ltd</b>
 					</p>
 					<p>
-						Level 1 / 83 Greenhill Road
+						Level 1 / 83 Greenhill Road Wayville, SA 5034
 					</p>
-					<p>	
-						Wayville, SA 5034
-					</p>	
+					
 					<p>	
 						Phone: +61 8 7225 9193
 					</p>
@@ -126,87 +126,20 @@
 					<p>
 						Email: info@leedgoodrich.com.au
 					</p>
+					</div>
 
 				</div>
 				<!-- end: Contact Info -->		
 
 
 				<!-- start: Photo Stream -->
-				<div class="span4">
-					
+				<div class="span6">
+					<div id="mylocation">
 					<h3>We are here!</h3>
-					<a href="contact.html"><%= image_tag "position.png" %></a>
-					
+					<a href="contact.html"><%= image_tag("position.png",:class => 'locationmap') %></a>
+					</div>
 				</div>
 				<!-- end: Photo Stream -->
-
-				<div class="span4">
-				
-					<!-- start: Follow Us -->
-					<h3>Partners</h3>
-					<ul class="social-grid">
-						<li>
-							<div class="social-item">				
-								<div class="social-info-wrap">
-									<div class="social-info">
-										<div class="social-info-front social-twitter">
-											<a href="http://twitter.com"></a>
-										</div>
-										<div class="social-info-back social-twitter-hover">
-											<a href="http://twitter.com"></a>
-										</div>	
-									</div>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="social-item">				
-								<div class="social-info-wrap">
-									<div class="social-info">
-										<div class="social-info-front social-facebook">
-											<a href="http://facebook.com"></a>
-										</div>
-										<div class="social-info-back social-facebook-hover">
-											<a href="http://facebook.com"></a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="social-item">				
-								<div class="social-info-wrap">
-									<div class="social-info">
-										<div class="social-info-front social-dribbble">
-											<a href="http://dribbble.com"></a>
-										</div>
-										<div class="social-info-back social-dribbble-hover">
-											<a href="http://dribbble.com"></a>
-										</div>	
-									</div>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="social-item">				
-								<div class="social-info-wrap">
-									<div class="social-info">
-										<div class="social-info-front social-flickr">
-											<a href="http://flickr.com"></a>
-										</div>
-										<div class="social-info-back social-flickr-hover">
-											<a href="http://flickr.com"></a>
-										</div>	
-									</div>
-								</div>
-							</div>
-						</li>
-					</ul>
-					<!-- end: Follow Us -->
-				
-
-				
-				</div>
 				
 			</div>
 			<!-- end: Row -->	

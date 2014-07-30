@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get '/contact' => 'contact#index', as: 'contact'
   get '/services' => 'services#index', as: 'services'
   get '/aboutus' => 'aboutus#index', as: 'aboutus'
+  get '/chinese' => 'chinese#index', as: 'chinese'
 
   get '/land' => 'projects#land', as: 'land'
   get '/lands/:landid' => 'landdivisions#index', as: 'land_division'
