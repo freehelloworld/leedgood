@@ -38,6 +38,11 @@
 	margin-right:60px;
 }
 
+.page-header h1, .static-page-header h1{
+  border-bottom: 4px solid #89c236;
+   display : inline
+}
+
 .navbar .nav > .myactive > a,
 .navbar .nav > .myactive > a:hover,
 .navbar .nav > .myactive > a:focus {

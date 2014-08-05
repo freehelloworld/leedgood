@@ -1,5 +1,5 @@
       <div class="container">
-        <%= image_tag "land.jpg" %>
+        <%= image_tag "Land-House.jpg" %>
       </div>
 <%- model_class = Homeland -%>
 <div class="container">
@@ -11,11 +11,11 @@
     <tr>
       <th><%= model_class.human_attribute_name(:lot) %></th>
       <th><%= model_class.human_attribute_name(:address) %></th>
-      <th><%= model_class.human_attribute_name(:size) %></th>
+      <th><%= model_class.human_attribute_name(:size) %>(㎡)</th>
       <th><%= model_class.human_attribute_name(:bedroom) %></th>
       <th><%= model_class.human_attribute_name(:bathroom) %></th>
       <th><%= model_class.human_attribute_name(:garage) %></th>
-      <th><%= model_class.human_attribute_name(:price) %></th>
+      <th><%= model_class.human_attribute_name(:price) %>(AUD)</th>
       <th><%= model_class.human_attribute_name(:status) %></th>      
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -29,7 +29,7 @@
         <td><%= homeland.bedroom %></td>
         <td><%= homeland.bathroom %></td>
         <td><%= homeland.garage %></td>
-        <td><%= homeland.price.to_i %></td>
+        <td><%= number_to_currency(homeland.price).split('.').first %></td>
         <td><%= homeland.status %></td>
         <td>
           <%= link_to "View detail",homeland_path(homeland), :class => 'btn btn-mini' %>
