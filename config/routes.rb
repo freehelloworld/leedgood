@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   get '/contact' => 'contact#index', as: 'contact'
+  get '/contact/sendemail' => 'contact#sendemail', as: 'sendemail'
   get '/services' => 'services#index', as: 'services'
   get '/aboutus' => 'aboutus#index', as: 'aboutus'
   get '/chinese' => 'chinese#index', as: 'chinese'
